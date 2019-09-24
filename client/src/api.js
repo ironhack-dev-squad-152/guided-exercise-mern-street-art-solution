@@ -108,4 +108,11 @@ export default {
       .then(res => res.data)
       .catch(errHandler)
   },
+
+  getStreetArt(streetArtId) {
+    return service
+      .get('/street-arts/' + streetArtId)
+      .then(res => res.data)
+      .catch(errHandler)
+  },
 }

@@ -39,7 +39,7 @@ export default function List() {
               <td className="align-middle">
                 <Link
                   className="btn btn-outline-danger"
-                  to={'/street-art-detaill/' + streetArt._id}
+                  to={'/street-art-detail/' + streetArt._id}
                 >
                   Detail
                 </Link>

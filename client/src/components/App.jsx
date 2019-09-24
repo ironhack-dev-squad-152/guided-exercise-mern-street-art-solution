@@ -5,6 +5,7 @@ import Home from './pages/Home'
 import List from './pages/List'
 import Login from './pages/Login'
 import Signup from './pages/Signup'
+import StreetArtDetail from './pages/StreetArtDetail'
 
 export default function App() {
   return (
@@ -15,6 +16,10 @@ export default function App() {
         <Route path="/list" component={List} />
         <Route path="/signup" component={Signup} />
         <Route path="/login" component={Login} />
+        <Route
+          path="/street-art-detail/:streetArtId"
+          component={StreetArtDetail}
+        />
         <Route render={() => <h2>404</h2>} />
       </Switch>
     </div>
