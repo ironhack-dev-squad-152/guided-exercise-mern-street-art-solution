@@ -6,6 +6,7 @@ import List from './pages/List'
 import Login from './pages/Login'
 import Signup from './pages/Signup'
 import StreetArtDetail from './pages/StreetArtDetail'
+import NewStreetArt from './pages/NewStreetArt'
 
 export default function App() {
   return (
@@ -16,6 +17,7 @@ export default function App() {
         <Route path="/list" component={List} />
         <Route path="/signup" component={Signup} />
         <Route path="/login" component={Login} />
+        <Route path="/new-street-art" component={NewStreetArt} />
         <Route
           path="/street-art-detail/:streetArtId"
           component={StreetArtDetail}
