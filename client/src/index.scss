@@ -3,6 +3,7 @@ $primary: #32c3ff;
 
 // Import variables
 @import '../node_modules/bootstrap/scss/bootstrap.scss';
+@import '../node_modules/mapbox-gl/src/css/mapbox-gl.css';
 
 .App {
   text-align: center;
