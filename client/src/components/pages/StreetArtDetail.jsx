@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react'
 import api from '../../api'
 import mapboxgl from 'mapbox-gl/dist/mapbox-gl'
-mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_TOKEN
 
 export default function StreetArtDetail(props) {
   let streetArtId = props.match.params.streetArtId
