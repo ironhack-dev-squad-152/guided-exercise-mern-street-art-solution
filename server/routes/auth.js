@@ -1,4 +1,5 @@
 const express = require('express')
+const nodemailer = require('nodemailer')
 const passport = require('passport')
 const router = express.Router()
 const User = require('../models/User')
@@ -31,7 +32,27 @@ router.post('/signup', (req, res, next) => {
       req.logIn(userSaved, () => {
         // hide "encryptedPassword" before sending the JSON (it's a security risk)
         userSaved.password = undefined
+
         res.json(userSaved)
+
+        // let transporter = nodemailer.createTransport({
+        //   service: 'Gmail',
+        //   auth: {
+        //     user: process.env.GMAIL_USER,
+        //     pass: process.env.GMAIL_PASS,
+        //   },
+        // })
+        // transporter
+        //   .sendMail({
+        //     from: process.env.GMAIL_USER,
+        //     to: userSaved.email,
+        //     subject: 'Welcome!!',
+        //     text: 'Hello world!',
+        //     html: '<b>Hello world!</b>',
+        //   })
+        //   .then(() => {
+        //     res.json(userSaved)
+        //   })
       })
     })
     .catch(err => next(err))

@@ -47,10 +47,10 @@ export default {
       .catch(errHandler)
   },
 
-  login(username, password) {
+  login(email, password) {
     return service
       .post('/login', {
-        username,
+        email,
         password,
       })
       .then(res => {
@@ -98,6 +98,13 @@ export default {
           'Content-Type': 'multipart/form-data',
         },
       })
+      .then(res => res.data)
+      .catch(errHandler)
+  },
+
+  getStreetArts() {
+    return service
+      .get('/street-arts')
       .then(res => res.data)
       .catch(errHandler)
   },

@@ -3,7 +3,7 @@ import api from '../../api'
 
 export default function Signup(props) {
   const [state, setState] = useState({
-    username: '',
+    email: '',
     name: '',
     password: '',
     message: null,
@@ -19,7 +19,7 @@ export default function Signup(props) {
   function handleClick(e) {
     e.preventDefault()
     let data = {
-      username: state.username,
+      email: state.email,
       name: state.name,
       password: state.password,
     }
@@ -32,34 +32,30 @@ export default function Signup(props) {
       .catch(err => setState({ message: err.toString() }))
   }
   return (
-    <div className="Signup">
+    <div className="Signup container">
       <h2>Signup</h2>
       <form>
-        Username:{' '}
+        Email
         <input
-          type="text"
-          value={state.username}
-          name="username"
+          className="form-control"
+          type="email"
+          value={state.email}
+          name="email"
           onChange={handleInputChange}
         />{' '}
         <br />
-        Name:{' '}
+        Password
         <input
-          type="text"
-          value={state.name}
-          name="name"
-          onChange={handleInputChange}
-        />{' '}
-        <br />
-        Password:{' '}
-        <input
+          className="form-control"
           type="password"
           value={state.password}
           name="password"
           onChange={handleInputChange}
         />{' '}
         <br />
-        <button onClick={e => handleClick(e)}>Signup</button>
+        <button className="btn btn-danger" onClick={e => handleClick(e)}>
+          Signup
+        </button>
       </form>
       {state.message && <div className="info info-danger">{state.message}</div>}
     </div>
